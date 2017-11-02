@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Talos Digital</title>
+
+    <!-- Core CSS - Include with every page -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet" />
+
+    <!-- Page-Level Plugin CSS - Forms -->
+
+    <!-- SB Admin CSS - Include with every page -->
+    <link th:href="@{/css/sb-admin.css}" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Talos Digital technical assessment</a>
+            </div>
+            <!-- /.navbar-header -->
+            <div class="navbar-default navbar-static-side" role="navigation">
+                <div class="sidebar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i>Form test</a>
+                        </li>
+                    </ul>
+                    <!-- /#side-menu -->
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Weather challenge</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Please choose a city and a metric system
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label>Select the city</label>
+                                            <select id="frm-city" class="form-control">
+                                                <option value="819827"	>Razvilka       </option>
+												<option value="524901"	>Moscow         </option>
+												<option value="1271881"	>Firozpur Jhirka</option>
+												<option value="1283240"	>Kathmandu      </option>
+												<option value="703448"	>Kiev           </option>
+												<option value="1282898"	>Pokhara        </option>
+												<option value="3632308"	>Merida         </option>
+												<option value="1273294"	>Delhi          </option>
+												<option value="502069"  >Reshetnikovo   </option>
+												<option value="3645532"	>Ciudad Bolivar </option>
+												<option value="529368"	>Marfino        </option>
+												<option value="462755"	>Zhukovskiy     </option>
+												<option value="502018"	>Reutov         </option>
+												<option value="538601"	>Kurovskoye     </option>
+												<option value="463355"	>Zheleznodorozhn</option>
+												<option value="560756"	>Golitsyno      </option>
+												<option value="509820"	>Petrozavodsk   </option>
+												<option value="498817"	>Saint Petersbur</option>
+												<option value="547560"	>Klimovsk       </option>
+												<option value="1496747"	>Novosibirsk    </option>
+												<option value="709717"	>Donetsk        </option>
+												<option value="555746"	>Istra          </option>
+												<option value="712969"	>Bakhchysaray   </option>
+												<option value="569591"	>Chekhov        </option>
+												<option value="532477"	>Lyubuchany     </option>
+												<option value="471457"	>Vostryakovo    </option>
+												<option value="711660"	>Boryspil       </option>
+												<option value="5647192"	>Dubna          </option>
+												<option value="564912"	>Druzhba        </option>
+												<option value="5715572"	>Bronnitsy      </option>
+												<option value="563705"	>Dzerzhinskiy   </option>
+												<option value="532657"	>Lytkarino      </option>
+												<option value="523812"	>Mytishchi      </option>
+												<option value="503977"	>Pushkino       </option>
+												<option value="5055972"	>Pravdinskiy    </option>
+												<option value="463826"	>Zelenogradskiy </option>
+												<option value="580597"	>Ashukino       </option>
+												<option value="549373"	>Khotkovo       </option>
+												<option value="497165"	>Semkhoz        </option>
+												<option value="496638"	>Sergiyev Posad </option>
+												<option value="580881"	>Arsaki         </option>
+												<option value="487095"	>Strunino       </option>
+												<option value="583350"	>Aleksandrov    </option>
+												<option value="552977"	>Karabanovo     </option>
+												<option value="548278"	>Kirzhach       </option>
+												<option value="515024"	>Orekhovo-Zuyevo</option>
+												<option value="535243"	>Likino-Dulevo  </option>
+												<option value="566950"	>Davydovo       </option>
+												<option value="557132"	>Ilinskiy Pogost</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Select the metric system</label>
+                                            <select id="frm-units" class="form-control">
+                                                <option value="metric">Metric</option>
+                                                <option value="imperial">Imperial</option>
+                                            </select>
+                                        </div>
+                                        <button id="btn-get-weather" type="button" class="btn btn-default">Get weather</button>
+                                    </form>
+
+                                </div>
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Result
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table id="table-weather-detail" class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>Field</th>
+                                        <th>Result</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>City</td>
+                                        <td id="td-city"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Country</td>
+                                        <td id="td-country-code"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Latitude</td>
+                                        <td id="td-latitude"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Longitude</td>
+                                        <td id="td-longitude"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Current weather</td>
+                                        <td id="td-current-weather"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wind Speed</td>
+                                        <td id="td-wind-speed"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Core Scripts - Include with every page -->
+    <script th:src="@{/js/jquery-1.10.2.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/js/plugins/metisMenu/jquery.metisMenu.js}"></script>
+
+    <!-- Page-Level Plugin Scripts - Forms -->
+
+    <!-- SB Admin Scripts - Include with every page -->
+    <script th:src="@{/js/sb-admin.js}"></script>
+
+    <!-- Page-Level Demo Scripts - Forms - Use for reference -->
+	<script type="text/javascript">
+		$("#btn-get-weather").click(function(){			
+			var city = $("#frm-city").val();
+			var units = $("#frm-units").val();
+			var actionURL = "/weather/"+city+"/"+units;
+			
+			$("#btn-get-weather").prop("disabled",true);
+			$.ajax({url:actionURL
+					, dataType: "json"
+					, success:function(result,status,xhr){
+						$("#td-city").html(result.name);
+						$("#td-country-code").html(result.sys.country);
+						$("#td-latitude").html(result.coord.lat);
+						$("#td-longitude").html(result.coord.lon);
+						$("#td-current-weather").html(result.main.temp);
+						$("#td-wind-speed").html(result.wind.speed);						
+						$("#btn-get-weather").prop("disabled", false);
+					},error: function(xhr,status,error){
+						 if(xhr.status==404) {
+						        alert("no se encontro data para los atributos enviads");
+						    }else{
+						    	alert("ocurrio un error al generar la consulta: " + error);
+						    }
+						$("#btn-get-weather").prop("disabled", false);
+					}
+			});
+		});
+	
+		
+		
+	</script>
+
+
+</body>
+
+</html>
