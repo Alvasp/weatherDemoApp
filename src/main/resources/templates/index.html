@@ -209,7 +209,7 @@
 		$("#btn-get-weather").click(function(){			
 			var city = $("#frm-city").val();
 			var units = $("#frm-units").val();
-			var actionURL = "/weather/"+city+"/"+units;
+			var actionURL = "weather/"+city+"/"+units;
 			
 			$("#btn-get-weather").prop("disabled",true);
 			$.ajax({url:actionURL
