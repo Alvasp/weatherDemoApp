@@ -14,6 +14,10 @@ public class WeatherServiceImpl implements WeatherService {
 	@Autowired
 	private WeatherDAO weatherDao;
 	
+	public WeatherServiceImpl(WeatherDAO weatherDAO) {
+		this.weatherDao = weatherDAO;
+	}
+	
 	@Override
 	public WeatherCondition getWeatherCondition(String cityId, String units) throws WeatherDemoAppBaseException {
 		return weatherDao.findWeatherCondition(cityId, units);
